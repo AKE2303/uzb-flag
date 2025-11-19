@@ -1,0 +1,75 @@
+body {
+    background: #0d1117;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Wrapper endi column bo'ladi (matn ustida, bayroq pastda) */
+.wrapper {
+    perspective: 1200px;
+    display: flex;
+    flex-direction: column;   /* ↓ Pastga joylash */
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* Matn va bayroq orasida joy */
+    max-width: 800px;
+}
+
+/* Matn (p) uchun style */
+.wrapper p {
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 16px;
+    padding: 15px 25px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,180,255,0.2);
+    backdrop-filter: blur(4px);
+}
+
+/* bayroq konteyneri */
+.flag-3d {
+    width: 420px;
+    height: auto;
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+/* bayroq */
+.flag-3d img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.3);
+    transition: box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+/* neon glow */
+.flag-3d::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: radial-gradient(
+        circle,
+        rgba(0, 200, 255, 0.25),
+        rgba(0, 200, 255, 0) 70%
+    );
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.3s ease;
+}
+
+.flag-3d:hover img {
+    box-shadow: 0 0 40px rgba(0, 200, 255, 0.9);
+    filter: brightness(1.15);
+}
+
+.flag-3d:hover::before {
+    opacity: 1;
+}
