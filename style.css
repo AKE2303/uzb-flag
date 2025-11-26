@@ -73,3 +73,12 @@ body {
 .flag-3d:hover::before {
     opacity: 1;
 }
+
+
+.wrapper p:hover {
+   background: rgba(255,255,255,0.05);
+    color: black;
+    font-style: unset;
+    border-radius: 11px;
+    box-shadow: 0 0 20px rgba(32, 188, 255, 0.719);
+}
